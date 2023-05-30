@@ -5,6 +5,9 @@ const app = express();
 const port = 8000;
 //  at deploy level port number is 80
 
+//  use router module 
+app.use('/', require('./routes/index'));
+
 app.listen(port, function (err) {
     if (err) {
         // console.log('Error is running');
