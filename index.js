@@ -5,6 +5,16 @@ const app = express();
 const port = 8000;
 //  at deploy level port number is 80
 
+// layouts deploy
+const expressLayouts = require('express-ejs-layouts');
+app.use(expressLayouts);
+//extract style and scripts from sub into the layout
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
+
+// static files binding
+app.use(express.static('./assets'));
+
 //  use router module 
 app.use('/', require('./routes/index'));
 
@@ -20,3 +30,6 @@ app.listen(port, function (err) {
     }
     console.log(`Server is running on the port: ${port}`);
 });
+
+
+//  for warning of LF to CRLF --> git config core.autocrlf true 

@@ -12,3 +12,6 @@ router.use('/users',require('./users'));
 // router.use('/routerName',require('./routerfile));
 
 module.exports = router;
+
+//  Users can be accessed by ---> http://localhost:8000/users/profile
+// index page can be accessed by ---> http://localhost:8000/ 
