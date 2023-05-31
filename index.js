@@ -12,11 +12,14 @@ app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
+// database connected
+const db = require('./config/mongoose');
+
 // static files binding
 app.use(express.static('./assets'));
 
 //  use router module 
-app.use('/', require('./routes/index'));
+app.use('/', require('./routes'));
 
 //  set up the view engine
 app.set('view engine','ejs');
